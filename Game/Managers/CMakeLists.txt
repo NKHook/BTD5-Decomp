@@ -1,0 +1,15 @@
+target_sources(BTD5-Win PRIVATE
+	"${CMAKE_CURRENT_LIST_DIR}/BloonvasionManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/BossManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/DailyQuestManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/DailyRewardsManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/MasteryManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/MixNMatchManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/MonkeyTeamManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/OdysseyManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/PreferredMonkeyManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/SFXManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/TheCrucibileManager.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/TrackList.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/WeeklyLeaderboardManager.cpp"
+)

@@ -1,0 +1,7 @@
+add_subdirectory(DailyQuests)
+add_subdirectory(Maps)
+add_subdirectory(Profile)
+add_subdirectory(Rules)
+add_subdirectory(UI)
+add_subdirectory(Waves)
+add_subdirectory(Weapons)

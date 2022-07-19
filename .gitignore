@@ -2,3 +2,13 @@
 out/
 decompiler/retdec/
 decompiler/target/
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+x64/
+*.dir/
+Debug/
+Release

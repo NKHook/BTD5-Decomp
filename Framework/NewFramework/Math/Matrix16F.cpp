@@ -8,7 +8,7 @@ Matrix16F::Matrix16F() {
     this->a = 1.0;
 }
 
-void __thiscall Matrix16F::Reset(Vec3F& location, float angle)
+void Matrix16F::Reset(Vec3F& location, float angle)
 {
     memset(this,0,0x40);
     this->p = 1.0;

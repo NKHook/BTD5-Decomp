@@ -1,5 +1,8 @@
 #include "BasePositionableObject.h"
 
+#include "../../Math/Matrix16F.h"
+#include "../../Math/Vec3F.h"
+#include "../../Math/Vec2F.h"
 #include <memory.h>
 
 CBasePositionableObject::CBasePositionableObject() : field1_0x4(0), field2_0x8(0)
@@ -12,41 +15,41 @@ CBasePositionableObject::CBasePositionableObject() : field1_0x4(0), field2_0x8(0
 
 ~CBasePositionableObject();
 void CBasePositionableObject::Render(bool animate) {}
-void CBasePositionableObject::Update(class SGameTime* pSGameTime) {}
-void CBasePositionableObject::UpdateRecursive(class SGameTime* param_1) {}
-bool CBasePositionableObject::HitTest(class Vec2F* location, float param_2) { return false; }
-void CBasePositionableObject::AddChild(class CBasePositionableObject* param_1) {}
-void CBasePositionableObject::AddChildAndUpdate(class CBasePositionableObject* param_1, int* param_2) {}
+void CBasePositionableObject::Update(class SGameTime& pSGameTime) {}
+void CBasePositionableObject::UpdateRecursive(class SGameTime& param_1) {}
+bool CBasePositionableObject::HitTest(Vec2F& location, float param_2) { return false; }
+void CBasePositionableObject::AddChild(class CBasePositionableObject& param_1) {}
+void CBasePositionableObject::AddChildAndUpdate(class CBasePositionableObject& param_1, int* param_2) {}
 void CBasePositionableObject::FUN_009e6dc0(int* param_1, int** param_2) {}
 void CBasePositionableObject::FUN_009e6d60() {}
-void CBasePositionableObject::SetXYZ(class Vec3F* location) {}
-void CBasePositionableObject::SetXY(class Vec2F* location) {}
-void CBasePositionableObject::SetXY_1(class Vec2F* location) {}
+void CBasePositionableObject::SetXYZ(Vec3F& location) {}
+void CBasePositionableObject::SetXY(Vec2F& location) {}
+void CBasePositionableObject::SetXY_1(Vec2F& location) {}
 void CBasePositionableObject::SetX(float x) {}
 void CBasePositionableObject::SetY(float y) {}
 void CBasePositionableObject::SetZ(float z) {}
-void CBasePositionableObject::MoveXYZ(class Vec3F* location) {}
-void CBasePositionableObject::MoveXY(class Vec2F* location) {}
+void CBasePositionableObject::MoveXYZ(Vec3F& location) {}
+void CBasePositionableObject::MoveXY(Vec2F& location) {}
 void CBasePositionableObject::MoveX(float x) {}
 void CBasePositionableObject::MoveY(float y) {}
 void CBasePositionableObject::MoveZ(float z) {}
-void CBasePositionableObject::Scale(class Vec2F* scale) {}
-void CBasePositionableObject::ScaleXY(class Vec2F* scale) {}
+void CBasePositionableObject::Scale(Vec2F& scale) {}
+void CBasePositionableObject::ScaleXY(Vec2F& scale) {}
 void CBasePositionableObject::ScaleX(float x) {}
 void CBasePositionableObject::ScaleY(float y) {}
 void CBasePositionableObject::SetRotation(float angle) {}
-void CBasePositionableObject::SetSize(class Vec2F* size) {}
+void CBasePositionableObject::SetSize(Vec2F& size) {}
 void CBasePositionableObject::SetSizeX(float x) {}
 void CBasePositionableObject::SetSizeY(float y) {}
 void CBasePositionableObject::SetAlignX(float x) {}
 void CBasePositionableObject::SetAlignY(float param_1) {}
-void CBasePositionableObject::SetAlignXY(class Vec2F* alignment) {}
-class CBasePositionableObject::Vec3F* GetLocation(class Vec3F* location) { return nullptr; }
-float* CBasePositionableObject:: GetLocationX() { return nullptr; }
-float* CBasePositionableObject:: GetLocationX_1() { return nullptr; }
-float* CBasePositionableObject:: GetLocationY() { return nullptr; }
-float* CBasePositionableObject:: GetLocationZ() { return nullptr; }
-class CBasePositionableObject::Vec2F* GetScale(class Vec2F* scale) { return nullptr; }
+void CBasePositionableObject::SetAlignXY(Vec2F& alignment) {}
+Vec3F& CBasePositionableObject::GetLocation(Vec3F& location) { return nullptr; }
+float& CBasePositionableObject::GetLocationX() { return nullptr; }
+float& CBasePositionableObject::GetLocationX_1() { return nullptr; }
+float& CBasePositionableObject::GetLocationY() { return nullptr; }
+float& CBasePositionableObject::GetLocationZ() { return nullptr; }
+Vec2F& CBasePositionableObject::GetScale(Vec2F& scale) { return nullptr; }
 float CBasePositionableObject::GetScaleX() { return 0.0f; }
 float CBasePositionableObject::GetScaleY() { return 0.0f; }
 void CBasePositionableObject::ResetMatrix() {

@@ -27,41 +27,41 @@ public:
 
 	virtual ~CBasePositionableObject();
 	virtual void Render(bool animate);
-	virtual void Update(class SGameTime* pSGameTime);
-	virtual void UpdateRecursive(class SGameTime* param_1);
-	virtual bool HitTest(class Vec2F* location, float param_2) { return false;  }
-	virtual void AddChild(class CBasePositionableObject* param_1);
-	virtual void AddChildAndUpdate(class CBasePositionableObject* param_1, int* param_2);
+	virtual void Update(SGameTime& pSGameTime);
+	virtual void UpdateRecursive(SGameTime& param_1);
+	virtual bool HitTest(Vec2F& location, float param_2) { return false;  }
+	virtual void AddChild(CBasePositionableObject& child);
+	virtual void AddChildAndUpdate(CBasePositionableObject& child, int* param_2);
 	virtual void FUN_009e6dc0(int* param_1, int** param_2);
 	virtual void FUN_009e6d60();
-	virtual void SetXYZ(class Vec3F* location);
-	virtual void SetXY(class Vec2F* location);
-	virtual void SetXY_1(class Vec2F* location);
+	virtual void SetXYZ(Vec3F& location);
+	virtual void SetXY(Vec2F& location);
+	virtual void SetXY_1(Vec2F& location);
 	virtual void SetX(float x);
 	virtual void SetY(float y);
 	virtual void SetZ(float z);
-	virtual void MoveXYZ(class Vec3F* location);
-	virtual void MoveXY(class Vec2F* location);
+	virtual void MoveXYZ(Vec3F& location);
+	virtual void MoveXY(Vec2F& location);
 	virtual void MoveX(float x);
 	virtual void MoveY(float y);
 	virtual void MoveZ(float z);
-	virtual void Scale(class Vec2F* scale);
-	virtual void ScaleXY(class Vec2F* scale);
+	virtual void Scale(Vec2F& scale);
+	virtual void ScaleXY(Vec2F& scale);
 	virtual void ScaleX(float x);
 	virtual void ScaleY(float y);
 	virtual void SetRotation(float angle);
-	virtual void SetSize(class Vec2F* size);
+	virtual void SetSize(Vec2F& size);
 	virtual void SetSizeX(float x);
 	virtual void SetSizeY(float y);
 	virtual void SetAlignX(float x);
 	virtual void SetAlignY(float param_1);
-	virtual void SetAlignXY(class Vec2F* alignment);
-	virtual class Vec3F* GetLocation(class Vec3F* location) { return nullptr; }
-	virtual float* GetLocationX() { return nullptr; }
-	virtual float* GetLocationX_1() { return nullptr; }
-	virtual float* GetLocationY() { return nullptr; }
-	virtual float* GetLocationZ() { return nullptr; }
-	virtual class Vec2F* GetScale(class Vec2F* scale) { return nullptr; }
+	virtual void SetAlignXY(Vec2F& alignment);
+	virtual Vec3F& GetLocation(Vec3F& location) { return nullptr; }
+	virtual float& GetLocationX() { return nullptr; }
+	virtual float& GetLocationX_1() { return nullptr; }
+	virtual float& GetLocationY() { return nullptr; }
+	virtual float& GetLocationZ() { return nullptr; }
+	virtual Vec2F& GetScale(Vec2F& scale) { return nullptr; }
 	virtual float GetScaleX() { return 0.0f; }
 	virtual float GetScaleY() { return 0.0f; }
 	virtual void ResetMatrix();

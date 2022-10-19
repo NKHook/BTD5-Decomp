@@ -1,6 +1,9 @@
 #pragma once
 
 #include "../../IBasePointers.h"
+#include "../../../Utilities/Misc/AssetBag.h"
+
+#include <string>
 
 enum class Device {
     PHONE = 0,
@@ -10,5 +13,8 @@ enum class Device {
 
 class CBaseScreen : public IBasePointers {
 public:
+    CBaseScreen();
     virtual ~CBaseScreen() {};
+
+    void StartUsingAsset(CAssetBag::eAssetType& assetType, std::string& assetName);
 };

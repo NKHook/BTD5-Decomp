@@ -23,4 +23,6 @@ public:
 	struct CLoc* pCLoc;
 
 	IBasePointers();
+
+	void CopyFrom(IBasePointers* other);
 };

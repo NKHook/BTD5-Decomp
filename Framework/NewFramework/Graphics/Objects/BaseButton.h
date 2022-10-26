@@ -15,6 +15,8 @@ class IButtonDelegate {
     std::vector<CBaseButton*> buttons;
     std::vector<CBaseButton*> moreButtons;
     bool avoidDuplicates = false;
+    char padding[3];
+    char padding_2[12];
     std::vector<CButtonDelegateWatcher*> watchers;
 public:
     virtual ~IButtonDelegate() = default;

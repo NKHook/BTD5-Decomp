@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../IBasePointers.h"
+#include "../BasePointers.h"
 
 class ScriptingSystem {
 public:

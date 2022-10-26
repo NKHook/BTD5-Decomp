@@ -2,8 +2,9 @@
 
 #include "../../../../../BlankTypes.h"
 
-#include "../../IBasePointers.h"
 #include "../../../Utilities/Misc/AssetBag.h"
+#include "../../BasePointers.h"
+#include "../ScreenData.h"
 
 #include <string>
 #include <sstream>
@@ -61,7 +62,7 @@ public:
     CBaseScreen();
     virtual ~CBaseScreen();
     virtual void _PreloadAssets();
-    virtual void Init(IScreenData* screenData);
+    virtual void Init(IScreenData& screenData);
     virtual void Uninit();
     virtual void Show();
     virtual void Hide();
@@ -75,7 +76,7 @@ public:
     virtual void BatteryLevelDidChange();
     virtual void ProcessInit();
     virtual void ProcessUninit();
-    virtual void* Process();
+    virtual void* Process(SGameTime* pGameTime);
     virtual void Input(SGameTime* pGameTime);
     virtual void Draw();
     virtual void DrawOverlay();

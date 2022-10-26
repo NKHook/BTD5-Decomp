@@ -88,11 +88,11 @@ void CBaseScreen::ProcessUninit()
         this->screenState = eScreenState::DESTROYING;
     }
 }
-void* CBaseScreen::Process() 
+void* CBaseScreen::Process(SGameTime* pGameTime) 
 {
 
 }
-void CBaseScreen::Input(class SGameTime* pGameTime) 
+void CBaseScreen::Input(SGameTime* pGameTime) 
 {
 
 }

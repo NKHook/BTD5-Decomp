@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include <list>
+#include <vector>
 
 enum class Device {
     PHONE = 0,
@@ -27,39 +28,19 @@ enum class eScreenState {
 }
 
 class CBaseScreen : public IBasePointers {
-    std::list<CBaseScreen*> children;
-    undefined4 field4_0x7c;
-    undefined4 field5_0x80;
-    undefined4 field6_0x84;
-    undefined4 field7_0x88;
-    undefined field8_0x8c;
-    undefined field9_0x8d;
-    undefined field10_0x8e;
-    undefined field11_0x8f;
-    undefined field12_0x90;
-    undefined field13_0x91;
-    undefined field14_0x92;
-    undefined field15_0x93;
-    undefined field16_0x94;
-    undefined field17_0x95;
-    undefined field18_0x96;
-    undefined field19_0x97;
-    undefined field20_0x98;
-    undefined field21_0x99;
-    undefined field22_0x9a;
-    undefined field23_0x9b;
-    undefined4 field24_0x9c;
-    undefined4 field25_0xa0;
-    CBaseScreen* parent;
-    eScreenState screenState;
-    undefined field28_0xa9;
-    undefined field29_0xaa;
-    undefined field30_0xab;
-    undefined4 field31_0xac;
-    boost::shared_ptr<CAssetBag> assetBag;
-    undefined4 field37_0xb8;
+    char pad_0070[4]; //0x0070
+	void* unknown_constructed = nullptr; //0x0074
+	char pad_0078[4]; //0x0078
+    std::vector<CBaseScreen*> children; //0x007C
+    char pad_0088[4] = 0; //0x0088
+    std::string screenName; //0x008C
+    CBaseScreen* parentScreen = nullptr; //0x00A4
+    eScreenState screenState = eScreenState::UNINITIALIZED; //0x00A8
+    char pad_00AC[4] = 0; //0x00AC
+    boost::shared_ptr<CAssetBag> pAssetBag = nullptr; //0x00B0
+    char pad_00B8[4] = 0; //0x00B8
 public:
-    CBaseScreen();
+    CBaseScreen(std::string& screenName);
     virtual ~CBaseScreen();
     virtual void _PreloadAssets();
     virtual void Init(IScreenData& screenData);

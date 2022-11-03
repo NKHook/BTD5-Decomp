@@ -1,6 +1,12 @@
 #include "BaseScreen.h"
 
-CBaseScreen::CBaseScreen() {}
+CBaseScreen::CBaseScreen(std::string& screenName) : IBasePointers()
+{
+    this->unknown_constructed = KONG_FUN_005c4cc0(0,0); //3.37
+    this->screenName = screenName;
+    this->parent = nullptr;
+    this->assetBag = nullptr;
+}
 CBaseScreen::~CBaseScreen()
 {
 

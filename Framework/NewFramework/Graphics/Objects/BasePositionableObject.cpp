@@ -20,8 +20,8 @@ void CBasePositionableObject::UpdateRecursive(class SGameTime& param_1) {}
 bool CBasePositionableObject::HitTest(Vec2F& location, float param_2) { return false; }
 void CBasePositionableObject::AddChild(class CBasePositionableObject& param_1) {}
 void CBasePositionableObject::AddChildAndUpdate(class CBasePositionableObject& param_1, int* param_2) {}
-void CBasePositionableObject::FUN_009e6dc0(int* param_1, int** param_2) {}
-void CBasePositionableObject::FUN_009e6d60() {}
+void CBasePositionableObject::WIN_FUN_009e6dc0(int* param_1, int** param_2) {} //Steam 3.37
+void CBasePositionableObject::DeleteChildren() {}
 void CBasePositionableObject::SetXYZ(Vec3F& location) {}
 void CBasePositionableObject::SetXY(Vec2F& location) {}
 void CBasePositionableObject::SetXY_1(Vec2F& location) {}
@@ -54,7 +54,7 @@ float CBasePositionableObject::GetScaleX() { return 0.0f; }
 float CBasePositionableObject::GetScaleY() { return 0.0f; }
 void CBasePositionableObject::ResetMatrix() {
 	if (this->complete != false) {
-		_DAT_00e2ea78 = _DAT_00e2ea78 + 1;
+		WIN_DAT_00e2ea78 = WIN_DAT_00e2ea78 + 1; //WIN_DAT_00e2ea78 in Steam ver 3.37
 		this->spriteMatrix.Reset(this->location, this->rotAngle);
 		if ((this->scale.x != 1.0) || (this->scale.y != 1.0)) {
 
@@ -81,6 +81,6 @@ void CBasePositionableObject::UpdateMatrix(bool param_1) {}
 void CBasePositionableObject::UpdateMatrixRecursive() {}
 void CBasePositionableObject::ForceUpdate() {}
 void CBasePositionableObject::SetTransitionAnim(float time, bool unused) {}
-void CBasePositionableObject::FUN_009e69d0() {}
+void CBasePositionableObject::WIN_FUN_009e69d0() {} //3.37
 void CBasePositionableObject::ForceUpdate_1() {}
 void CBasePositionableObject::DrawChildren() {}

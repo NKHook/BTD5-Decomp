@@ -12,3 +12,13 @@ Right now you can't. In the future, however, chances are you will be able to bui
 
 ## Can this be used for mods?
 Yes, absolutely! I suggest looking at the NKHook5 project that will soon be reliant on this project for most patching and such. It will also help avoid copyright/dmca problems, as making a mod directly into the game's exe would mean you would have to make pirated copies to distribute the mod (very illegal!!).
+
+## Standards
+The code standards used at Ninja Kiwi for this game and their NewFramework engine are unknown.
+
+For the project,
+- We should assume that brackets `{}` are placed on new lines, unlike Java where its usually on the same line. If this is found to be innaccurate (judging from line numbers of assertions), then this rule may be ignored.
+- Unknown function names should be prefixed with the executable it came from, as well as commented with the specific release/update number. For example, a function from the Steam release, version 2.0, at address 00000000 should look like this: `WIN_FUN_00000000(...); //Version 2.0`. Same logic applies for other versions of the game. Another example: `KONG_FUN_01234567(...) //Version 3.2` would be from BTD5-Kong.exe version 3.2 at address 01234567.
+- Addresses should be RVA addresses, those that are found in Ghidra/IDA. If an RVA address absolutely cannot be used, then the format use in Cheat Engine (Ex. `BTD5-Win.exe+0x12345`) should be used instead (filename+offset). It is still important to add a comment with the version here as well.
+
+If any inconsistencies are found with this standard in the project, please open an issue. At the moment I ([DisabledMallis](https://github.com/DisabledMallis)) am the only person working on this, so mistakes are bound to happen. I will do my best to fix any issues found, and I appreciate when they are reported to me.

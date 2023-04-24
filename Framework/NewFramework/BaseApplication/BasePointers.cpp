@@ -30,7 +30,7 @@ IBasePointers::IBasePointers() {
 	//this->field30_0x6c = nullptr;
 }
 
-void IBasePointers::CopyFrom(IBasePointers* this, IBasePointers* other) {
+void IBasePointers::CopyFrom(IBasePointers* other) {
 	this->pCTextureLoader = other->pCTextureLoader;
 	this->pCInput = other->pCInput;
 	this->pCApp = other->pCApp;

@@ -14,12 +14,59 @@ CBasePositionableObject::CBasePositionableObject() : field1_0x4(0), field2_0x8(0
 }
 
 ~CBasePositionableObject();
-void CBasePositionableObject::Render(bool animate) {}
-void CBasePositionableObject::Update(class SGameTime& pSGameTime) {}
-void CBasePositionableObject::UpdateRecursive(class SGameTime& param_1) {}
-bool CBasePositionableObject::HitTest(Vec2F& location, float param_2) { return false; }
-void CBasePositionableObject::AddChild(class CBasePositionableObject& param_1) {}
-void CBasePositionableObject::AddChildAndUpdate(class CBasePositionableObject& param_1, int* param_2) {}
+void CBasePositionableObject::Render(bool recurse)
+{
+	if(this->visible)
+	{
+		this->UpdateMatrix(false);
+		if(recurse)
+		{
+			this->RenderChildren();
+		}
+	}
+}
+void CBasePositionableObject::Update(SGameTime& gameTime)
+{
+	return;
+}
+void CBasePositionableObject::UpdateRecursive(SGameTime& gameTime)
+{
+	this->Update(gameTime);
+	for(CBasePositionableObject* child : this->children)
+	{
+		child->UpdateRecursive(gameTime);
+	}
+}
+bool CBasePositionableObject::HitTest(Vec2F& location, float param_2)
+{
+	/* TODO: Write error message code... I'm excluding it for the time being because of the amount of preprocessor code and context I don't have */
+}
+void CBasePositionableObject::AddChild(CBasePositionableObject* child)
+{
+	if(child == nullptr)
+	{
+		return;
+	}
+
+	if(this->needsCompletion)
+	{
+		this->SetCompletionNeeds(true);
+	}
+	if(child->parent == nullptr)
+	{
+		child->Complete();
+	}
+	child->parent = this;
+	child->Complete();
+	puVar2 = this->children;
+	puVar1 = &child->field1_0x4;
+	piVar3 = puVar2->pPrevChild;
+	child->field2_0x8 = piVar3;
+	*puVar1 = puVar2;
+	puVar2->pPrevChild = puVar1;
+	*piVar3 = (int)puVar1;
+}
+void CBasePositionableObject::AddChildAndUpdate(CBasePositionableObject& param_1, int* param_2) {}
 void CBasePositionableObject::WIN_FUN_009e6dc0(int* param_1, int** param_2) {} //Steam 3.37
 void CBasePositionableObject::DeleteChildren() {}
 void CBasePositionableObject::SetXYZ(Vec3F& location) {}
@@ -81,6 +128,13 @@ void CBasePositionableObject::UpdateMatrix(bool param_1) {}
 void CBasePositionableObject::UpdateMatrixRecursive() {}
 void CBasePositionableObject::ForceUpdate() {}
 void CBasePositionableObject::SetTransitionAnim(float time, bool unused) {}
-void CBasePositionableObject::WIN_FUN_009e69d0() {} //3.37
+void CBasePositionableObject::SetCompletionNeeds(bool needsCompletion)
+{
+	this->needsCompletion = needsCompletion;
+	for(CBasePositionableObject* child : this->children)
+	{
+		child->SetCompletionNeeds(needsCompletion);
+	}
+}
 void CBasePositionableObject::ForceUpdate_1() {}
-void CBasePositionableObject::DrawChildren() {}
+void CBasePositionableObject::RenderChildren() {}

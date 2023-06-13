@@ -58,15 +58,12 @@ void CBasePositionableObject::AddChild(CBasePositionableObject* child)
 	}
 	child->parent = this;
 	child->Complete();
-	puVar2 = this->children;
-	puVar1 = &child->field1_0x4;
-	piVar3 = puVar2->pPrevChild;
-	child->field2_0x8 = piVar3;
-	*puVar1 = puVar2;
-	puVar2->pPrevChild = puVar1;
-	*piVar3 = (int)puVar1;
+	this->children.push_back(child);
 }
-void CBasePositionableObject::AddChildAndUpdate(CBasePositionableObject& param_1, int* param_2) {}
+void CBasePositionableObject::AddChildAndUpdate(CBasePositionableObject& param_1, int* param_2)
+{
+	
+}
 void CBasePositionableObject::WIN_FUN_009e6dc0(int* param_1, int** param_2) {} //Steam 3.37
 void CBasePositionableObject::DeleteChildren() {}
 void CBasePositionableObject::SetXYZ(Vec3F& location) {}

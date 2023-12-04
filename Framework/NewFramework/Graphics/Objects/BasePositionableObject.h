@@ -6,7 +6,9 @@
 #include "../../Math/Vec2F.h"
 #include "../../Math/Vec3F.h"
 
-class CBasePositionableObject {
+class CBasePositionableObject :
+	public boost::intrusive::list_base_hook<boost::intrusive::tag<_BasePositionableObjectDetail::SBasePositionableObjectListTag>, boost::intrusive::link_mode<2>, void>,
+	public boost::intrusive::hook_tags_definer<boost::intrusive::generic_hook<boost::intrusive::circular_list_algorithms<boost::intrusive::list_node_traits<void*>>, _BasePositionableObjectDetail::SBasePositionableObjectListTag, 2, 1>, 0> {
 public:
 	char pad_0000[12]; //0x0000
 	bool visible; //0x000C

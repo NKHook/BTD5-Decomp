@@ -8,7 +8,9 @@
 
 class CBasePositionableObject {
 public:
-	char pad_0000[20]; //0x0000
+	char pad_0000[12]; //0x0000
+	bool visible; //0x000C
+	char pad_000D[3]; //0x000D
 	std::list<CBasePositionableObject*> children; //0x0014
 	Vec2F size; //0x0020
 	Vec2F sizeHalf; //0x0028
@@ -26,7 +28,7 @@ public:
 	CBasePositionableObject::CBasePositionableObject();
 
 	virtual ~CBasePositionableObject();
-	virtual void Render(bool animate);
+	virtual void Render(bool recurse);
 	virtual void Update(SGameTime& pSGameTime);
 	virtual void UpdateRecursive(SGameTime& param_1);
 	virtual bool HitTest(Vec2F& location, float param_2) { return false;  }
@@ -69,7 +71,7 @@ public:
 	virtual void UpdateMatrixRecursive();
 	virtual void ForceUpdate();
 	virtual void SetTransitionAnim(float time, bool unused);
-	virtual void FUN_009e69d0();
+	virtual void SetCompletionNeeds(bool completed);
 	virtual void ForceUpdate_1();
-	virtual void DrawChildren();
+	virtual void RenderChildren();
 };

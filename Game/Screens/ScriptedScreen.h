@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Generic/Menu/PopupScreenBase.h"
+#include "Generic/Menu/PopupScreenBase.hpp"
 #include "ScriptedScreenData.h"
 
 class ScriptedScreen : public CPopupScreenBase {
@@ -11,6 +11,6 @@ public:
     virtual void Uninit() override;
     virtual void BackButtonPressed() override;
     virtual std::string ChildScreenClosed(std::string screenName, bool param_2) override;
-    virtual void* Process(SGameTime* pGameTime) override;
-    virtual void Input(SGameTime* pGameTime) override;
+    virtual void* Process(struct SGameTime* pGameTime) override;
+    virtual void Input(struct SGameTime* pGameTime) override;
 }

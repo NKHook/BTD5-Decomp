@@ -23,3 +23,10 @@ public:
 	int mX = 0;
 	int mY = 0;
 };
+
+class CVec3 {
+public:
+	float mX = 0.0f;
+	float mY = 0.0f;
+	float mZ = 0.0f;
+};

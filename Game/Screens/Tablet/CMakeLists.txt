@@ -1,1 +1,1 @@
-target_sources(BTD5-Win PRIVATE)
+target_sources(${GAME_TARGET} PRIVATE)

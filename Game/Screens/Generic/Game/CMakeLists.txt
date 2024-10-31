@@ -1,4 +1,4 @@
-target_sources(BTD5-Win PRIVATE
+target_sources(${GAME_TARGET} PRIVATE
 	"${CMAKE_CURRENT_LIST_DIR}/AchievementPopup.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/CoopWelcomePopup.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/GameScreen.cpp"

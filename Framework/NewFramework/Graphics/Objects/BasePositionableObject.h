@@ -2,9 +2,8 @@
 
 #include <list>
 
-#include "../../Math/Matrix16F.h"
-#include "../../Math/Vec2F.h"
-#include "../../Math/Vec3F.h"
+#include <Math/Matrix.hpp>
+#include <Math/MathematicTypes/VectorDataStructures.hpp>
 
 class CBasePositionableObject :
 	public boost::intrusive::list_base_hook<boost::intrusive::tag<_BasePositionableObjectDetail::SBasePositionableObjectListTag>, boost::intrusive::link_mode<2>, void>,

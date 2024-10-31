@@ -1,4 +1,4 @@
-target_sources(BTD5-Win PRIVATE
+target_sources(${GAME_TARGET} PRIVATE
 	"${CMAKE_CURRENT_LIST_DIR}/BloonAbilityFactory.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/BloonFactory.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/GameRuleFactory.cpp"

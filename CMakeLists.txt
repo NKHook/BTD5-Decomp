@@ -8,9 +8,11 @@ project(BTD5-Decomp
 set(CMAKE_CXX_STANDARD 26)
 
 if (WIN32)
-set (NFW_PLATFORM_NAME "Win")
+	set (NFW_PLATFORM_NAME "Win")
 elseif (UNIX)
-set(NFW_PLATFORM_NAME "Unix")
+	set(NFW_PLATFORM_NAME "Unix")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++20 -fPIC")
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -std=gnu++20 -lc++abi")
 endif ()
 
 set(GAME_TITLE "BloonsTD5")

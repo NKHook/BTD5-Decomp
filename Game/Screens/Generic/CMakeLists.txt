@@ -1,2 +1,2 @@
-add_subdirectory(Game)
-add_subdirectory(Menu)
+#add_subdirectory(Game)
+#add_subdirectory(Menu)

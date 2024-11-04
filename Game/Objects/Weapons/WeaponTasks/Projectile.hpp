@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Objects/Weapons/WeaponTask.hpp>
-#include <Graphics/Objects/BasePositionableObject.h>
+#include <NewFramework/Graphics/Objects/BasePositionableObject.h>
 
 //TODO: Find actual place where these would be defined
 enum DrawLayer {

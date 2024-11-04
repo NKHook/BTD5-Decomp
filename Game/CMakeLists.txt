@@ -14,3 +14,4 @@ target_sources(${GAME_TARGET} PRIVATE
 	"${CMAKE_CURRENT_LIST_DIR}/SocialLeaderboard.cpp"
 )
 target_include_directories(${GAME_TARGET} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(${GAME_TARGET} PRIVATE NKFrameworkDecomp)
